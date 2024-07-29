@@ -2,7 +2,7 @@ import { catchAsyncError } from "../middlewares/catchAsyncError.js";
 import ErrorHandler from "../utils/errorHandler.js";
 import { sendToken } from "../utils/sendToken.js";
 import { User } from "../models/User.js";
-import { sendEmail } from "../utils/sendemail.js";
+import { sendEmail } from "../utils/sendEmail.js";
 import crypto from 'crypto';
 import { Course } from "../models/Course.js";
 import cloudinary from "cloudinary";
