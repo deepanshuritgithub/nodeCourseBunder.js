@@ -22,6 +22,10 @@ app.use(cookieParser());  //to use cookies in express app
 
 
 
+app.get("/", (req,res)=>{
+    res.send("Nice working")
+})
+
 
 
 
