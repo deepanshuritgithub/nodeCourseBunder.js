@@ -10,7 +10,7 @@ export const sendToken = (res, user, message , statusCode = 200) =>{
         // or
         // The cookie can only be used by the web server, not by any scripts running on your browser. This keeps it safe from some types of hacking.
 
-        // secure: true,//this flag ensures that the cookie is only sent to the server over secure HTTPS connections. This helps prevent the cookie from being intercepted by attackers during transmission (man-in-the-middle attacks).
+        secure: true,//this flag ensures that the cookie is only sent to the server over secure HTTPS connections. This helps prevent the cookie from being intercepted by attackers during transmission (man-in-the-middle attacks).
         // or
         //The cookie is only sent over secure, encrypted connections (HTTPS), which keeps it safe from being stolen during transmission.
 

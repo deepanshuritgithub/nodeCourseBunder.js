@@ -2,6 +2,7 @@ import express from 'express';
 import { config } from "dotenv";
 import ErrorMiddleware from "./middlewares/Error.js"
 import cookieParser from 'cookie-parser';
+import cors from "cors"
 
 config({
     path: "./config/config.env"
@@ -9,6 +10,7 @@ config({
 
 const app = express();
 
+//so yha pe hmme kuch chize dene hai otherwise hm cookies transfer nahi kr payengee , so credentials hmme mandatory hai jo hmme true krne hai 
 
 //using middlwares to handle json data and Url encoded form data 
 app.use(express.json()); 
@@ -21,9 +23,17 @@ app.use(
 app.use(cookieParser());  //to use cookies in express app
 
 
+app.use(
+    cors({
+    origin:process.env.FRONTEND_URL,
+    credentials:true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
+})
+);//Ye kis Liye hai agr ye hm na de to es server se 2sri website pe hm request hi nahi kr payengee 
 
+//default route set 
 app.get("/", (req,res)=>{
-    res.send("Nice working")
+    res.send(`<h1>Site is Working. click <a href=${process.env.FRONTEND_URL}>here</a> to visit frontend.</h1>`)
 })
 
 
