@@ -82,6 +82,10 @@ export const logout = catchAsyncError(async(req, res, next) => {
     //hme bss cookie ko empty krna hai basically so 
     res.status(200).cookie('token', null, {
         expires: new Date(Date.now()), //SO Jaise abhi ki date de hai to abhi delete ho jayegaa direct 
+        httpOnly: true,
+        secure : true,
+        samesite:"none",
+        
     }).json({ 
         success: true,
         message: "Logged out Successfully",

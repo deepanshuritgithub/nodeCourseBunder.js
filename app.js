@@ -25,9 +25,9 @@ app.use(cookieParser());  //to use cookies in express app
 //so yha pe hmme kuch chize dene hai otherwise hm cookies transfer nahi kr payengee , so credentials hmme mandatory hai jo hmme true krne hai 
 app.use(
     cors({
-    origin:process.env.FRONTEND_URL,
-    credentials:true, //ye true rkhana hai otherwise nahi kr payenge send cookies ko 
-    methods: ['GET', 'POST', 'PUT', 'DELETE']
+    origin:[process.env.FRONTEND_URL],
+    credentials: true, //ye true rkhana hai otherwise nahi kr payenge send cookies ko 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
 })
 );//Ye kis Liye hai agr ye hm na de to es server se 2sri website pe hm request hi nahi kr payengee , or ye jo hmne origin pass kiya hai frontend ka url bass isii website ko allow hai ye sari api use krne , otherwise koi nahi kr payegii
 

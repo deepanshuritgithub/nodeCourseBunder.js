@@ -1,10 +1,10 @@
-export const sendToken = (res, user, message , statusCode = 200) =>{
+export const sendToken = (res, user, message , statusCode = 200) => {
 
     const token = user.getJWTToken()//YE METHOD HAI user ka token generate krne ke liye esko call kr dengee, which is used to generate a jwt token. 
     // /suppose token mil gya hai, token ko hm set kr denge token ke naam se cookies mai
 
     const options ={                            
-        expires: new Date(Date.now() + 15*24*60*60*1000), 
+        expires: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000), 
 
         httpOnly: true,//This flag ensures that the cookie is only accessible via the HTTP protocol, which means it cannot be accessed or modified by client-side JavaScript. This helps protect against certain types of cross-site scripting (XSS) attacks.
         // or
@@ -27,7 +27,5 @@ export const sendToken = (res, user, message , statusCode = 200) =>{
         success: true,
         message,
         user,
-
-
     }); 
 }
