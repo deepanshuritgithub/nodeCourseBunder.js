@@ -66,9 +66,9 @@ export const paymentVerification = catchAsyncError(async (req, res, next) => {
     //database comes here
     //so database mai add krenge agr authentic huaa 
     await Payment.create({  
+        razorpay_signature,
         razorpay_payment_id,
-        razorpay_order_id, 
-        razorpay_signature
+        razorpay_subscription_id,
     }) //enka kaam aayega refund krne ke time pe , create at hm check kr lenge agr 1 hafte ke andar hi kr rha hai cancel subscription  tab refund kr denge otherwise nahi , ye optional hai , agr nahi rkhna refund ka option to mt rkho 
 
 
