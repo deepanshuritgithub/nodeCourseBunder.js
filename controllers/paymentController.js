@@ -45,7 +45,7 @@ res.status(201).json({
 //payment verification
 export const paymentVerification = catchAsyncError(async (req, res, next) => {
     
-    const {razorpay_payment_id, razorpay_order_id, razorpay_signature} = req.body;
+    const {razorpay_payment_id, razorpay_subscription_id, razorpay_signature} = req.body;
     
     const user = await User.findById(req.user._id);
 
