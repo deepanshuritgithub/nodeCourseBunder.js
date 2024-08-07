@@ -28,7 +28,7 @@ router.route('/createcourse').post(isAuthenticated, authorizeAdmin ,singleUpload
 router
 .route("/course/:id")
 .get(isAuthenticated, authorizeSubscribers, getCourseLectures) //getCourseLectures mai ek or chiz add krenge ki subscribers ko hi allowed hai lectures, vo bhi bnayenge middleware 
-.post(isAuthenticated, authorizeAdmin, singleUpload, addLecture)//es wala mai auhorize admin bhi aayega kyuki admin hi hai jo lectures add kr sakta hai 
+.post(isAuthenticated, authorizeAdmin, singleUpload, addLecture)//es wala mai authorize admin bhi aayega kyuki admin hi hai jo lectures add kr sakta hai 
 .delete(isAuthenticated,authorizeAdmin, deleteCourse);
 
 
