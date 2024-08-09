@@ -173,8 +173,8 @@ export const deleteCourse = catchAsyncError(async(req , res , next) => {
     // await course.remove();//if it not works then use this below one 
        // Use deleteOne to remove the course from the database
     await Course.deleteOne({ 
+        _id:id //now finally delete the course itself   
     });
-
 
     res.status(200).json({
         success: true,
