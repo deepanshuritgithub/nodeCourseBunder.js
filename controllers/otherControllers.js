@@ -29,8 +29,9 @@ export const contact = catchAsyncError(async(req, res, next) => {
 export const courseRequest = catchAsyncError(async(req, res, next) => {
 
     const {name, email , course }= req.body;
-    if(!name || !email || !message)
+    if(!name || !email || !course)
         return next(new ErrorHandler("All fields are mandatory",400));
+    
     const to = process.env.MY_MAIL
     const subject = "Request for a course on CourseBunder";
     const text = `I am ${name} and my Email is ${email}. \n ${course} `;
@@ -40,10 +41,6 @@ export const courseRequest = catchAsyncError(async(req, res, next) => {
     res.status(200).json({
         success: true,
         message: "Your request has been sent.",
-    })
-    res.status(200).json({
-        success: true,
-        message: "Contact form submitted successfully",
     })
 });
 
