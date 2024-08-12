@@ -76,8 +76,8 @@ export const getDashboardStats = catchAsyncError(async(req, res, next) => {
     }
                         //stats data ka jo last element hoga , mtlb 11 , 0 se start hota hai 
     const usersCount = statsData[11].users; //last element mai users wala jo field hai vo chahhiyee..
-    const subscriptionCount = statsData[11].users;
-    const viewsCount = statsData[11].users;
+    const subscriptionCount = statsData[11].subscription;
+    const viewsCount = statsData[11].views;
 
     let usersPercentage = 0,
     viewsPercentage = 0, 
